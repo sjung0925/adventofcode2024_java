@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 
 class day1 {
-    public class solution{
+    public static class solution{
         List<Integer> left  = new ArrayList<>(); // 왼
         List<Integer> right = new ArrayList<>(); // 오
 
@@ -15,14 +15,14 @@ class day1 {
     }
 
     // 총합
-    public Integer getSum() throws IOException {
+    public void getSum() throws IOException {
         List<String> result = readFile();
         solution s = new solution();
 
         for (String line : result) {
             int x = 0; int y = 0;
-            x = Integer.parseInt(line.split("   ")[0]);
-            y = Integer.parseInt(line.split("   ")[1]);
+            x = Integer.parseInt(line.split(" {3}")[0]);
+            y = Integer.parseInt(line.split(" {3}")[1]);
 
             // 두개의 리스트로 분리
             s.left.add(x);
@@ -41,13 +41,13 @@ class day1 {
             s.sumDistance += distance;
         }
         System.out.println("result =====> "+s.sumDistance);
-        return s.sumDistance;
     }
 
     // 파일 읽기
     public List<String> readFile() throws IOException {
         // 줄바꿈을 구분자로 리스트 형식으로 파싱
-        List<String> lines = Files.readAllLines(Paths.get("src/input/day01.txt"));
+        List<String> lines;
+        lines = Files.readAllLines(Paths.get("src/input/day01.txt"));
 //        System.out.println(lines);
         return lines;
     }
