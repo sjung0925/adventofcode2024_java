@@ -20,7 +20,7 @@ class day1 {
         solution s = new solution();
 
         for (String line : result) {
-            int x = 0; int y = 0;
+            int x; int y;
             x = Integer.parseInt(line.split(" {3}")[0]);
             y = Integer.parseInt(line.split(" {3}")[1]);
 
