@@ -28,10 +28,10 @@ public class day02 {
     // 증가
     public boolean is_increase(int[] arr){
         boolean check = true;
-        increseLoop:for(int i = 0; i < arr.length - 1; i++){
+        for(int i = 0; i < arr.length - 1; i++){
             if(!(arr[i] < arr[i+1])){
                 check = false;
-                break increseLoop;
+                break;
             }
         }
         return check;
@@ -40,10 +40,10 @@ public class day02 {
     // 감소
     public boolean is_decrease(int[] arr){
         boolean check = true;
-        decreaseLoop:for(int i = 0; i < arr.length - 1; i++){
+        for(int i = 0; i < arr.length - 1; i++){
             if(!(arr[i] > arr[i+1])){
                 check = false;
-                break decreaseLoop;
+                break;
             }
         }
         return check;
@@ -52,12 +52,11 @@ public class day02 {
     // 범위 확인
     public boolean checkRange(int[] arr){
         boolean check = true;
-        diffLoop:
         for(int i = 0; i < arr.length - 1; i++){
             int diffAbs = Math.abs(arr[i] - arr[i+1]);
             if(diffAbs == 0 || diffAbs > 3){
                 check = false;
-                break diffLoop;
+                break;
             }
         }
         return check;
