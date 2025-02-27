@@ -29,7 +29,7 @@ public class day04 {
             for(int m = 0; m < strArr[n].length; m++){
                 // 8방향
                 if(strArr[n][m].equals("X")){
-                    for(int j = 0; j < eightDirection.length; j++){
+                    for (int[] ints : eightDirection) {
                         // 이동한 좌표
                         int newN = n;
                         int newM = m;
@@ -37,23 +37,23 @@ public class day04 {
                         String checkWord = "";
 
                         // 한 방향 당 목표 글자수 만큼만 이동
-                        for(int k = 0; k < findWord.length; k++){
+                        for (int k = 0; k < findWord.length; k++) {
                             // !! 기준이 되는 현재 좌표도 포함하도록 계산을 추가함
-                            newN = n + eightDirection[j][0] * k;
-                            newM = m + eightDirection[j][1] * k;
+                            newN = n + ints[0] * k;
+                            newM = m + ints[1] * k;
 //                            System.out.println("현재위치 : ("+n+","+m+") 좌표 : ("+newN+","+newM+")");
 
                             // 현재 위치가 배열 범위 이내인가?
-                            if(newN >= 0 && newN < strArr.length && newM >= 0 && newM < strArr[n].length) {
+                            if (newN >= 0 && newN < strArr.length && newM >= 0 && newM < strArr[n].length) {
                                 // XMAS와 일치하는가
                                 if (strArr[newN][newM].equals(findWord[k])) {
                                     checkWord += strArr[newN][newM];
 
                                     // 문자가 XMAS와 완전히 일치하는가?
-                                    if(checkWord.equals("XMAS")){
-                                        totalCount ++;
+                                    if (checkWord.equals("XMAS")) {
+                                        totalCount++;
                                     }
-                                }else{
+                                } else {
                                     break;
                                 }
                             }
