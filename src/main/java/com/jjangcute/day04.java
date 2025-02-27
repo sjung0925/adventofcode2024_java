@@ -31,8 +31,8 @@ public class day04 {
                 if(strArr[n][m].equals("X")){
                     for (int[] ints : eightDirection) {
                         // 이동한 좌표
-                        int newN = n;
-                        int newM = m;
+                        int newN;
+                        int newM;
                         // 문자를 순회하며 일치할 때마다 문자를 담을
                         String checkWord = "";
 
